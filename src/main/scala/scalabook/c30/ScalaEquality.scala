@@ -12,7 +12,13 @@ import scala.collection.mutable
 *    as a solution, 'canEqual' is checked in 'equal()', refer to 'Point' <|-- 'ColoredPoint'
 *  - generally, when sub-class redefine 'equals', 'hashCode', 'canEqual', then we cannot make it
 *    compare to its super-class.
+*  - In the 'Tree[T]' example, compare 2 branches will not take [T] into account,
+*    because type-parameter will be eliminated at runtime. ( critical fact! )
 *
+*  - Best Practice
+*    It's surprisingly difficult to get the equality method right, so it's a good idea to use
+*    'case class' instead of 'class', as Scala compiler will override 'equals' and 'hashCode'
+*    for you~~~
 * */
 
 class Point_1(val x: Int, val y: Int) {
