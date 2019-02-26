@@ -15,5 +15,6 @@ object MainTest {
 
   def main(args: Array[String]): Unit = {
     println( "scalabook.c33 testing ...")
+    println("test jenkins integration!!")
   }
 }
